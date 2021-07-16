@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+#headline {
+  text-align: center;
+  margin-top: 60px;
+  color: steelblue;
+  font-size: 50px;
+}
+.title {
+  font-size: 25px;
+  font-weight: 700;
+  color: steelblue;
+}
+#login-area {
+  position: relative;
+}
+#login-form {
+  position: absolute;
+  left: 18%;
+  margin-top: 30px;
+  width: 60%;
+  height: 200px;
+  padding: 20px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+}
+.input-field {
+  width: 100%;
+  margin: 15px 0 15px 0;
+  padding: 5px;
+  box-shadow: inset 0 0 5px gray;
+  border: none;
+  height: 25px;
+  border-radius: 5px;
+}
+#login-btn {
+  background-color: rgb(52, 151, 74);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  width: 120px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+}
+#login-btn:hover {
+  box-shadow: 0 0 10px gray;
+}
+#transaction-area {
+  padding: 30px;
+  display: none;
+}
+#balance-display {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px;
+}
+.status {
+  width: 200px;
+  height: 80px;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px gray;
+}
+.deposit {
+  background-color: slateblue;
+}
+.withdraw {
+  background-color: salmon;
+}
+.balance {
+  background-color: orange;
+}
+.btn {
+  background-color: rgb(52, 151, 74);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  width: 120px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+}
+.btn:hover {
+  box-shadow: 0 0 10px gray;
+}
+#transaction-input {
+  display: flex;
+  justify-content: space-between;
+}
+.form {
+  margin: 20px;
+  width: 60%;
+  padding: 20px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 10px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  right: 40%;
+  color: steelblue;
+}

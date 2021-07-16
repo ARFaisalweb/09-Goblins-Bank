@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gringotts Wizarding Bank</title>
+    <link rel="stylesheet" href="gringottsBank.css" />
+</head>
+
+<body>
+    <!-- login area -->
+    <div id="login-area">
+        <h1 id="headline"> Welcome to Gringotts Wizarding Bank</h1>
+        <form id="login-form">
+            <label class="title" for="">Login</label>
+            <br>
+            <input class="input-field" type="text" placeholder="Email" required>
+            <br>
+            <input class="input-field" type="password" placeholder="password">
+            <br>
+            <input id="login-btn" type="button" value="Enter">
+    </div>
+    <!-- transaction area -->
+    <div id="transaction-area">
+        <div id="balance-display">
+            <div class="status deposit">
+                <h3>Deposite</h3>
+                <h1>$ <span id="deposit-balance">00</span></h1>
+            </div>
+            <div class="status withdraw">
+                <h3>Withdraw</h3>
+                <h1>$ <span id="withdraw-balance">00</span></h1>
+            </div>
+            <div class="status balance">
+                <h3>Balance</h3>
+                <h1>$ <span id="total-balance">00</span></h1>
+            </div>
+        </div>
+        <div id="transaction-input">
+            <div class="form">
+                <h4 class="title">Deposit</h4>
+                <input id="deposit-amount" class="input-field" type="text" placeholder="$ amount you want to deposit">
+                <input id="deposit-btn" class="btn" type="button" value="Deposit">
+            </div>
+            <div class="form">
+                <h4 class="title">Withdraw</h4>
+                <input id="withdraw-amount" class="input-field" type="text" placeholder="$ amount you want to withdraw">
+                <input id="withdraw-btn" class="btn" type="button" value="Withdraw">
+            </div>
+        </div>
+    </div>
+    <footer id="footer">Copyright &copy; 2021 GOBLINS</footer>
+    <script>
+        // login area to transaction area display change.
+        const loginBtn = document.getElementById("login-btn");
+        loginBtn.addEventListener("click", () => {
+            const loginArea = document.getElementById("login-area");
+            loginArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display = "block";
+        });
+        // deposit
+        const depositBtn = document.getElementById("deposit-btn");
+        depositBtn.addEventListener("click", () => {
+            const depositAmount = document.getElementById("deposit-amount").value;
+            const depositNumber = parseFloat(depositAmount);
+            const depositBalance = document.getElementById("deposit-balance").innerText;
+            const currentDepositNumber = parseFloat(depositBalance);
+            const totalDeposit = depositNumber + currentDepositNumber;
+            if (depositAmount !== "" && isNaN(depositNumber) == false) {
+                document.getElementById("deposit-balance").innerText = totalDeposit;
+            }
+            document.getElementById("deposit-amount").value = "";
+
+            const totalBalace = document.getElementById("total-balance").innerText;
+            const currentTotalAmount = parseFloat(totalBalace);
+            const totalAmount = currentTotalAmount + depositNumber;
+            if (depositAmount !== "" && isNaN(depositNumber) == false) {
+                document.getElementById("total-balance").innerText = totalAmount;
+            }
+        });
+        // withdraw
+        const withdrawBtn = document.getElementById("withdraw-btn");
+        withdrawBtn.addEventListener("click", () => {
+            const withdrawAmount = document.getElementById("withdraw-amount").value;
+            const withdrawNumber = parseFloat(withdrawAmount);
+            const currentWihtdrawAmount =
+                document.getElementById("withdraw-balance").innerText;
+            const currentWihtdrawNumber = parseFloat(currentWihtdrawAmount);
+            const totalWithdrawAmount = withdrawNumber + currentWihtdrawNumber;
+            if (withdrawAmount !== "" && isNaN(withdrawNumber) == false) {
+                document.getElementById("withdraw-balance").innerText = totalWithdrawAmount;
+            }
+            document.getElementById("withdraw-amount").value = "";
+            const totalBalace = document.getElementById("total-balance").innerText;
+            const currentTotalAmount = parseFloat(totalBalace);
+            const totalAmount = currentTotalAmount - withdrawNumber;
+            if (withdrawAmount !== "" && isNaN(withdrawNumber) == false) {
+                document.getElementById("total-balance").innerText = totalAmount;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
